@@ -4,17 +4,17 @@ The code is released under the GNU General Public License.
 
 ## Summary
 
-Arduino library for projects with kit Amfitrack of Amfitech and PREMO Group. With this project you could use this kit with your Arduino board (only all official Arduino AVR boards) and USB Host Shield with Amfitrack's sensors and hub, also you need to download the library of Arduino Host Shield 2.0 of Felis for use USB Host Shield. This library is based on this library for USB communications.
+Arduino library for projects with kit Amfitrack of Amfitech and PREMO Group. With this project you could use this kit with your Arduino board (*only all official Arduino AVR boards*) and USB Host Shield with Amfitrack's sensors and hub, also you need to download the library of Arduino Host Shield 2.0 of Felis for use USB Host Shield. This library is based on this library for USB communications.
 This project was my thesis, so you can find the document in pdf extension in the main folder, but it is completely in Spanish language.
 
-https://raw.githubusercontent.com/casxsja/ArduPREMO/master/assets/draft.jpg
+![draft of connections of all the elements](https://raw.githubusercontent.com/casxsja/ArduPREMO/master/assets/draft.jpg)
 
 The library has the variables and functions above:
 
 Estructuras Position y Quaternion
 Estas estructuras se definen en el archivo header y fuera de la clase ArduPREMO. Su finalidad es la de crear una serie de variables de posicionamiento (position) y orientación (quaternion) del tipo flotante (número con decimales) y calcularlos en milímetros, según marca el protocolo USB de Amfitech recogido en el Anexo del presente documento.
 
-***Variables de la clase ArduPREMO
+**Variables de la clase ArduPREMO**
 
 En esta sección se describen las variables creadas en la clase ArduPREMO. Las variables son las siguientes:
 
@@ -39,7 +39,7 @@ En esta sección se describen las variables creadas en la clase ArduPREMO. Las v
 ▪ Definición CYCLE_TIME
   Esta definición sirve para el ejemplo creado Amfitrack_Viewer. Con él, el usuario puede ralentizar la obtención de las variables para poder leer mejor la consola.
 
-***Funciones de la clase ArduPREMO
+**Funciones de la clase ArduPREMO**
 
 En esta sección se detallan las funciones creadas en la clase ArduPREMO. Las funciones son las siguientes:
 
