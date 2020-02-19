@@ -12,9 +12,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-*   It was created for academic purpose (tesis project) by ¡lvaro JosÈ ¡vila-Casanova UreÒa from University of M·laga.
+*   It was created for academic purpose (tesis project) by √Ålvaro Jos√© √Åvila-Casanova Ure√±a from University of M√°laga.
 
-*   Contact: PREMO Group - https://www.grupopremo.com/
+*   Contact: R&D PREMO Group - https://www.grupopremo.com/
 
 */
 
