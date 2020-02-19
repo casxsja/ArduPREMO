@@ -1,6 +1,6 @@
 # ArduPREMO
 
-*The code is released under the GNU General Public License.
+The code is released under the GNU General Public License.
 
 # Summary
 
