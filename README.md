@@ -1,8 +1,8 @@
-## ArduPREMO
+# ArduPREMO
 
 The code is released under the GNU General Public License.
 
-# Summary
+## Summary
 
 Arduino library for projects with kit Amfitrack of Amfitech and PREMO Group. With this project you could use this kit with your Arduino board (only all official Arduino AVR boards) and USB Host Shield with Amfitrack's sensors and hub, also you need to download the library of Arduino Host Shield 2.0 of Felis for use USB Host Shield. This library is based on this library for USB communications.
 This project was my thesis, so you can find the document in pdf extension in the main folder, but it is completely in Spanish language.
@@ -68,7 +68,7 @@ En el contexto del presente proyecto, el método ParseHIDData de la clase ArduPR
 error dichas variables durante la manipulación de la librería en el momento de la implementación en su respectivo proyecto.
 
 
-# IMPORTANT:
+## IMPORTANT:
 At first, the USB communication could fail due to STALL problem. To fix it just unplug and plug the USB from USB Host Shield. Other solution is implement a virtual switch like in this example: https://web.archive.org/web/20160821185145/https://www.circuitsathome.com/mcu/vbus-power-control-on-usb-host-shield  .
 
 
