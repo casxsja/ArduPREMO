@@ -53,26 +53,25 @@ In this section are detailed the functions created in ArduPREMO class. The funct
 In this context, ParseHIDDATA method of ArduPREMO class is responsible of copying the buffer and confirming that it is the data pointer that we need.
 
 ▪ Void Screening
-  Screening es un filtro para el paquete de datos. Con ello se puede confirmar que el puntero de datos obtenido es el especificado en el protocolo USB proporcionado por Amfitech, se puede encontrar en el Anexo.
+  Screening is a filter for data packets. With that we can confirm that the data pointer is like the data packet of USB protocol of Amfitrack documentation.
 
 ▪ Bool connected
-  Esta función es un booleano que resulta verdadero cuando el ID Vendor y el ID Product del Hub coinciden con los definidos dentro del archivo ArduPREMO.h. Si es falso, no se imprimirá ningún puntero de datos.
+  This function is a boolean that is True when ID Vendor and Product of your Hub is the same that the ID Vendor and Product specified in ArduPREMO.h. If it is False, the data pointer will not be printed in Arduino_viewer.ino sketch.
+*Important: ID Vendor and ID Product could change from specified in ArduPREMO.h. Use a sniffer to know the IDs of your own kit Amfitrack.)
 
 ▪ Long intFromBytes
-  Función para pasar los bytes del paquete de datos a decimal. Además, permite al usuario seleccionar si el paquete está en Little Endian o Big Endian, si necesita el posicionamiento con signo o sin signo.
-
+  This function is used to convert bytes from data pointer to decimal. Also, it allows to user to choose between Little Endian or Big Endian. Little Endian is predetermined here.
+  
 ▪ Const uint8_t* Getbuf
-  Esta función sirve para hacer una copia del puntero de datos. Es del tipo constante para prevenir que sea alterado en alguna otra parte del programa.
+  This function was created to make a copy of the data pointer. Is of Const type to avoid any change that the library could do accidentaly.
 
 ▪ Float getQuaternion y Float getPosition
-  Ambas funciones son las que necesita utilizar el usuario si quiere recibir los resultados del cálculo de posicionamiento y orientación del Sensor Receptor Amfitrack. Estas funcionan con un case en el que, si el usuario en su código escribe 0, 1 o 2, le entregará la orientación o posición respecto a los ejes X, Y o Z, respectivamente. El case 3 solo sirve para la orientación, ya que entrega el Momento.
+  Both functions are needed for the user if he wants to get the results of position and orientation calculus from Amfitrack's hardware. They have a Switch. The user can use this Switch to choose the information about position or orientation that he wants to get from  Hub. They run on the same way.
 
 ▪ Quaternion getQuaternion y Position getPosition
-  Estas funciones sirven para realizar una copia de las variables calculadas. Así el usuario no debe preocuparse de si elimina por
-error dichas variables durante la manipulación de la librería en el momento de la implementación en su respectivo proyecto.
-
+  These functions are used to make a copy of calculated variables. So the user does not worry if he accidentaly remove these variables when he is playing with the library or implementing the library in his project.
 
 ## IMPORTANT:
-At first, the USB communication could fail due to STALL problem. To fix it just unplug and plug the USB from USB Host Shield. Other solution is implement a virtual switch like in this example: https://web.archive.org/web/20160821185145/https://www.circuitsathome.com/mcu/vbus-power-control-on-usb-host-shield  .
+At first, the USB communication could fail due to STALL problem. To fix it just unplug and plug the USB from USB Host Shield. An optimal solution is implementing a virtual switch like in this example: https://web.archive.org/web/20160821185145/https://www.circuitsathome.com/mcu/vbus-power-control-on-usb-host-shield  .
 
 
