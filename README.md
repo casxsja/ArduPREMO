@@ -11,12 +11,12 @@ This project was my thesis, so you can find the document in pdf extension in the
 
 The library has the variables and functions above:
 
-*Structs*
+**Structs**
 
 ▪ Position and Quaternion structs:
    These structs are defined in header file and out of ArduPREMO class. The target is to create position and orientation variables (six degrees of freedom) float type and calculate them in millimeters (more info in USB protocol of Amfitrack).
 
-*Variables of ArduPREMO class*
+**Variables of ArduPREMO class**
 
 In this section we can find variables from ArduPREMO class. The variables are below:
 
@@ -30,6 +30,7 @@ In this section we can find variables from ArduPREMO class. The variables are be
 ▪ long int quatY
 ▪ long int quatZ
 ▪ long int quatW
+
   These seven variables are sensor's position and orientation (we will get them from intFromBytes). They are long because the sensor sends 3D positioning for positive and negative axis, so we need a bigger bytes number. I suggest to the user not use these variables directly and implement getPosition and getQuaternion functions which are explained in the next section.
 
 ▪ uint8_t* pBUFF
@@ -43,12 +44,13 @@ In this section we can find variables from ArduPREMO class. The variables are be
 
 **Functions of ArduPREMO class**
 
-En esta sección se detallan las funciones creadas en la clase ArduPREMO. Las funciones son las siguientes:
+In this section are detailed the functions created in ArduPREMO class. The functions are below:
 
 ▪ Void ParseHIDData
-  Esta función se usa para analizar los datos del USB HID. Fue reimplementada de la clase HIDUniversal, es decir, HIDUniversal contiene un método virtual llamado ParseHIDData y se utiliza en la librería desarrollada. Un método virtual es una función asociada a un objeto que indica cómo ha de definirse una función, pero no indica cómo resuelve el problema que se plantee [35]. Por ello, cada librería tiene una función ParseHIDData distinta.
+  This function is used to analyze the data of USB HID. It was reimplemented from HIDUniversal class of USB HOST SHIELD 2.0 library (HIDUniversal has the virtual method called ParseHIDData.
+  *Note: A virtual method is a function associated to an object that point out how has a function to be defined, although it does not        indicate how to resolve the problem. Because of it, every library has a different ParseHIDData function.*
 
-En el contexto del presente proyecto, el método ParseHIDData de la clase ArduPREMO se encarga de copiar el buffer y de confirmar que se trata del puntero de datos buscado.
+In this context, ParseHIDDATA method of ArduPREMO class is responsible of copying the buffer and confirming that it is the data pointer that we need.
 
 ▪ Void Screening
   Screening es un filtro para el paquete de datos. Con ello se puede confirmar que el puntero de datos obtenido es el especificado en el protocolo USB proporcionado por Amfitech, se puede encontrar en el Anexo.
