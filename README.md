@@ -11,15 +11,17 @@ This project was my thesis, so you can find the document in pdf extension in the
 
 The library has the variables and functions above:
 
-Estructuras Position y Quaternion
-Estas estructuras se definen en el archivo header y fuera de la clase ArduPREMO. Su finalidad es la de crear una serie de variables de posicionamiento (position) y orientación (quaternion) del tipo flotante (número con decimales) y calcularlos en milímetros, según marca el protocolo USB de Amfitech recogido en el Anexo del presente documento.
+*Structs*
 
-**Variables de la clase ArduPREMO**
+▪ Position and Quaternion structs:
+   These structs are defined in header file and out of ArduPREMO class. The target is to create position and orientation variables (six degrees of freedom) float type and calculate them in millimeters (more info in USB protocol of Amfitrack).
 
-En esta sección se describen las variables creadas en la clase ArduPREMO. Las variables son las siguientes:
+*Variables of ArduPREMO class*
+
+In this section we can find variables from ArduPREMO class. The variables are below:
 
 ▪ uint8_t TxUID
-   Variable que sirve para identificar la ID del receptor 3DCoild conectado al Hub Amfitrack. Si no hay ningún receptor conectado el                programa imprime un aviso por pantalla. El byte TxUID está contenido en el paquete de datos que envía el Hub Amfitrack.
+   This variable is used to identify ID of 3Dcoil sensor connected to your Hub Amfitrack. If does not exist any sensor connected (TxUID_bool), the program will print a notification. TxUID byte stay in the data packet that Hub sends.
 
 ▪ long int posX
 ▪ long int posY
@@ -28,18 +30,18 @@ En esta sección se describen las variables creadas en la clase ArduPREMO. Las v
 ▪ long int quatY
 ▪ long int quatZ
 ▪ long int quatW
-  Estas siete variables son el posicionamiento y la orientación del receptor obtenido tras el cálculo de la función intFromBytes.     Tienen una extensión long int (entero largo) porque el receptor envía el posicionamiento 3D para los ejes tanto positivos como negativos, necesitando así un mayor número de bytes. Se aconseja al usuario no utilizar estas variables directamente y sí implementar las funciones getPosition y getQuaternion descritas más abajo.
+  These seven variables are sensor's position and orientation (we will get them from intFromBytes). They are long because the sensor sends 3D positioning for positive and negative axis, so we need a bigger bytes number. I suggest to the user not use these variables directly and implement getPosition and getQuaternion functions which are explained in the next section.
 
 ▪ uint8_t* pBUFF
-  La variable pBUFF es un puntero de datos. Este contiene el paquete de datos que el Hub envía al Arduino MEGA2560. Hay que señalar que este puntero se crea consiguiendo los datos del puntero Buf, el cual no siempre posee el paquete de datos. Esto depende del proceso de enumeración y no contiene el paquete hasta que esa enumeración ha sido recorrida con éxito.
+  pBUFF variable is a data pointer. It has the data packet that Amfitrack's Hub sends to Arduino MEGA2560. It should be noted that this pointer is created acquiring the data from Buf pointer which does not always has the data packet. This depends of enumeration process and this pointer has not the data packet until this machine state is in running (configured) state.
 
 ▪ bool TxUID_bool
-  Este booleano sirve para indicar si se ha conectado (True) o no (False) un receptor 3D coil.
+  This boolean is used to point out if a 3D sensor is connected (True) or disconnected (False).
 
-▪ Definición CYCLE_TIME
-  Esta definición sirve para el ejemplo creado Amfitrack_Viewer. Con él, el usuario puede ralentizar la obtención de las variables para poder leer mejor la consola.
+▪ Definition CYCLE_TIME
+  This definition is used in Amfitrack_viewer.ino sketch. The user can use it to slow down the variables obtaining and read the Arduino console better.
 
-**Funciones de la clase ArduPREMO**
+**Functions of ArduPREMO class**
 
 En esta sección se detallan las funciones creadas en la clase ArduPREMO. Las funciones son las siguientes:
 
