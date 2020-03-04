@@ -1,0 +1,74 @@
+USBReportId [uint8] 		// Always 0x02
+USBSocket [uint8]			// Always 0x0B
+USBProperty [uint8]			// Always 0x83
+USBDataLength [uint8]	
+TxId [uint8]				// Increments for each message
+MessageType [uint8]			// NoACK = 0x09, MustACK = 0x11, ACK = 0x32
+PayloadLength [uint8]
+TxUID [uint8]				// Sensor/Source ID 
+HeadCRC [uint8]
+Payload[???]
+PayloadCRC [uint8]
+
+
+Position Payload (Quarternion)
+==============================
+	PayloadType [uint8]		// 0x14
+	XPos [int24LE]			// in 0.01 mm resolution
+	YPos [int24LE]			// -||-
+	ZPos [int24LE]			// -||-
+	QuatX[int24LE]			// Divide by 1000000 to get element
+	QuatY[int24LE]			// -||-
+	QuatZ[int24LE]			// -||-
+	QuatW[int24LE]			// -||-
+	Status [uint8]			// Battery, EMF and hardware status bits
+	
+	
+CurrentAndFrequency Payload
+==================================
+	PayloadType [uint8] 	// 0x10
+	CurrentCoilX [float]
+	CurrentCoilY [float]
+	CurrentCoilZ [float]
+	FrequencyX [float]
+	FrequencyY [float]
+	FrequencyZ [float]
+
+
+Sensor Status Payload
+====================
+	PayloadType [uint8] 	// 0x09
+	Status [uint8] 			// Battery, EMF and hardware status bits
+	
+	
+	
+
+Example:
+--------
+Raw USB packet:
+ 02 0B 83 20 17 09 17 00 96 14 10 27 00 10 27 00
+ 10 27 00 00 00 00 00 00 00 00 00 00 40 42 0F 02
+ CD 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ 
+Breakdown:
+ 02 0B 83 		USBReportId, USBSocket, USBProperty
+ 20 			USBDataLength			// 0x20 = 32 bytes useful USB data
+ 17				TxId					// Increments for each message
+ 09 			MessageType				// 0x09 = NoACK
+ 17 			PayloadLength			// 0x17 = 23 bytes payload
+ 00 			TxUID 					// Sensor/Source ID
+ 96 			HeadCRC
+	14 			PayloadType				// Position Payload (Quarternion)
+	10 27 00 	XPos [int24LE]			// 0x002710 = 10000 and 10000 *0.01mm = 100mm
+	10 27 00	YPos [int24LE]			// 0x002710 = 10000 and 10000 *0.01mm = 100mm
+	10 27 00	ZPos [int24LE]			// 0x002710 = 10000 and 10000 *0.01mm = 100mm
+	00 00 00	QuatX[int24LE]			// 0x000000 = 0 and 0 / 1000000 = 0
+	00 00 00 	QuatY[int24LE]			// 0x000000 = 0 and 0 / 1000000 = 0
+	00 00 00 	QuatZ[int24LE]			// 0x000000 = 0 and 0 / 1000000 = 0
+	40 42 0F 	QuatW[int24LE]			// 0x0F4240 = 1000000 and 1000000 / 1000000 = 1
+	02			Status					// TBD
+ CD 			PayloadCRC
+ 
+										// The rest of the USB packet is unused.
+ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00

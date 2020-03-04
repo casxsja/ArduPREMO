@@ -1,0 +1,136 @@
+Protocolo USB de AmfiTech HUB. Conseguido a través del programa Microsoft USB_View.exe  :
+
+Device Descriptor:
+bcdUSB:             0x0201
+bDeviceClass:         0x00
+bDeviceSubClass:      0x00
+bDeviceProtocol:      0x00
+bMaxPacketSize0:      0x40 (64)
+idVendor:           0x0C17 (Cyberboard A/S)
+idProduct:          0x0D12
+bcdDevice:          0x0200
+iManufacturer:        0x01
+0x0409: "Amfitech"
+iProduct:             0x02
+0x0409: "Amfitrack Sensor"
+iSerialNumber:        0x03
+0x0409: "00000000001A"
+bNumConfigurations:   0x01
+
+ConnectionStatus: DeviceConnected
+Current Config Value: 0x01
+Device Bus Speed:     Full
+Device Address:       0x18
+Open Pipes:              2
+
+Endpoint Descriptor:
+bEndpointAddress:     0x81  IN
+Transfer Type:   Interrupt
+wMaxPacketSize:     0x0040 (64)
+bInterval:            0x01
+
+Endpoint Descriptor:
+bEndpointAddress:     0x01  OUT
+Transfer Type:   Interrupt
+wMaxPacketSize:     0x0040 (64)
+bInterval:            0x01
+
+Configuration Descriptor:
+wTotalLength:       0x0029
+bNumInterfaces:       0x01
+bConfigurationValue:  0x01
+iConfiguration:       0x00
+bmAttributes:         0xC0 (Bus Powered Self Powered )
+MaxPower:             0xFA (500 Ma)
+
+Interface Descriptor:
+bInterfaceNumber:     0x00
+bAlternateSetting:    0x00
+bNumEndpoints:        0x02
+bInterfaceClass:      0x03 (HID)
+bInterfaceSubClass:   0x00
+bInterfaceProtocol:   0x00
+iInterface:           0x00
+
+HID Descriptor:
+bcdHID:             0x0111
+bCountryCode:         0x00
+bNumDescriptors:      0x01
+bDescriptorType:      0x22
+wDescriptorLength:  0x0036
+
+Endpoint Descriptor:
+bEndpointAddress:     0x81  IN
+Transfer Type:   Interrupt
+wMaxPacketSize:     0x0040 (64)
+bInterval:            0x01
+
+Endpoint Descriptor:
+bEndpointAddress:     0x01  OUT
+Transfer Type:   Interrupt
+wMaxPacketSize:     0x0040 (64)
+bInterval:            0x01
+
+
+///LECTURA DEL PROGRAMA DEMO_HUB DE USB HOST SHIELD 2.0///
+
+Start
+
+
+01
+--
+String Descriptors:
+Manufacturer:		Amfitech
+Product:		Amfitrack Sensor
+Serial:			00000000001A
+
+Device descriptor: 
+Descriptor Length:	12
+Descriptor type:	01
+USB version:		0201
+Device class:		00
+Device Subclass:	00
+Device Protocol:	00
+Max.packet size:	40
+Vendor  ID:		0C17
+Product ID:		0D12
+Revision ID:		0200
+Mfg.string index:	01
+Prod.string index:	02
+Serial number index:	03
+Number of conf.:	01
+
+Configuration descriptor:
+Total length:		0029
+Num.intf:		01
+Conf.value:		01
+Conf.string:		00
+Attr.:			C0
+Max.pwr:		FA
+
+Interface descriptor:
+Intf.number:		00
+Alt.:			00
+Endpoints:		02
+Intf. Class:		03
+Intf. Subclass:		00
+Intf. Protocol:		00
+Intf.string:		00
+Unknown descriptor:
+Length:		09
+Type:		21
+Contents:	110100012236000705
+
+Endpoint descriptor:
+Endpoint address:	81
+Attr.:			03
+Max.pkt size:		0040
+Polling interval:	01
+
+Endpoint descriptor:
+Endpoint address:	01
+Attr.:			03
+Max.pkt size:		0040
+Polling interval:	01
+
+Addr:1(0.0.1)
