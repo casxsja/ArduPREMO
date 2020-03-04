@@ -1,4 +1,4 @@
-**USB protocol of my Amfitrack's HUB. It was obtained using Microsoft USB_View :
+**USB protocol of my Amfitrack's HUB. It was obtained using Microsoft USB_View :**
 
 Device Descriptor:
 bcdUSB:             0x0201
@@ -72,7 +72,7 @@ wMaxPacketSize:     0x0040 (64)
 bInterval:            0x01
 
 
-**Using USB_HOST_SHIELD_2.0 USB_desc sketch
+**Using USB_HOST_SHIELD_2.0 USB_desc sketch :**
 
 Start
 
