@@ -49,7 +49,7 @@ void ArduPREMO::Screening() {
   uint8_t pkg[64];
 
   for(uint8_t cont{0}; cont<64; ++cont){
-    pkg[cont] = pBUFF[cont];             //Copia del buffer para usar en Screening
+    pkg[cont] = pBUFF[cont];             //Copy of buffer to use it in Screening function.
   }
 
  if ((pkg[7]!= 0x00 and pkg[0] == 0x02) and (pkg[1] == 0x0B) and (pkg[2] == 0x83) and
@@ -77,7 +77,7 @@ void ArduPREMO::Screening() {
 
 /*
  * intFromBytes - makes an long integer from its bytes
- * This function is from Víctor E. Torres López - professor in University of Málaga.
+ * This function is from VÃ­ctor E. Torres LÃ³pez - professor in University of MÃ¡laga.
  */
 long ArduPREMO::intFromBytes(uint8_t b0, uint8_t b1, uint8_t b2, bool little, bool _signed) {
   long value;
