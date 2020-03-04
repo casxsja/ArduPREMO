@@ -53,8 +53,9 @@ void ArduPREMO::Screening() {
   }
 
  if ((pkg[7]!= 0x00 and pkg[0] == 0x02) and (pkg[1] == 0x0B) and (pkg[2] == 0x83) and
-     (pkg[6] == 0x17) and (pkg[33] == 0x00)) {
-
+     (pkg[6] == 0x17) and (pkg[33] == 0x00)) { //Important: pkg[7] is UID of your own source. This 3Dcoil has a ID number on its surface
+                                               //and this byte depends of this number, so you could have probably a different byte to 0x00.
+                                               //Change it. See Protocol_USB file in master branch.
    TxUID_bool = true;
 
    TxId = pkg[4];
