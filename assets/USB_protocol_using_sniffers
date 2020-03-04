@@ -1,4 +1,5 @@
-Protocolo USB de AmfiTech HUB. Conseguido a través del programa Microsoft USB_View.exe  :
+USB protocol of my Amfitrack's HUB. It was obtained using Microsoft USB_View :
+Protocolo USB de AmfiTech HUB. Conseguido a travÃ©s del programa Microsoft USB_View.exe  :
 
 Device Descriptor:
 bcdUSB:             0x0201
@@ -72,7 +73,7 @@ wMaxPacketSize:     0x0040 (64)
 bInterval:            0x01
 
 
-///LECTURA DEL PROGRAMA DEMO_HUB DE USB HOST SHIELD 2.0///
+///Using USB_HOST_SHIELD_2.0 USB_desc sketch///
 
 Start
 
