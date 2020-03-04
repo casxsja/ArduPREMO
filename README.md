@@ -7,7 +7,7 @@ The code is released under the GNU General Public License.
 Arduino library for projects with kit Amfitrack of Amfitech and PREMO Group. With this project you could use this kit with your Arduino board (*only all official Arduino AVR boards*) and USB Host Shield with Amfitrack's sensors and hub, also you need to download the library of Arduino Host Shield 2.0 of Felis for use USB Host Shield. This library is based on this library for USB communications.
 This project was my thesis, so you can find the document in pdf extension in the main folder, but it is completely in Spanish language.
 
-![draft of connections of all the elements][(https://drive.google.com/file/d/1t4fxZwSQ9NeZy5G9cyBWN2vhbul5_shi/view?usp=sharing)]
+![draft of connections of all the elements](https://drive.google.com/file/d/1t4fxZwSQ9NeZy5G9cyBWN2vhbul5_shi/view?usp=sharing)
 
 The library has the variables and functions above:
 
